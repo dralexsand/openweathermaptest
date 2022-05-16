@@ -44,15 +44,22 @@ class DataModel extends Model
 
     public function readTextFile($path)
     {
-        //$fp = fopen(Storage::path('public/' . $path), "r");
         $fp = fopen(Storage::disk('data')->path($path), "r");
-        $result = [];
+
+        $excluded = [
+            '\n',
+            '\r'
+        ];
+
+        $data = [];
+
         while (!feof($fp)) {
-            $result[] = fgets($fp);
+            //$data[] = fgets($fp);
+            $data[] = trim(str_replace($excluded, '', fgets($fp)));
         }
         fclose($fp);
 
-        return $result;
+        return $data;
     }
 
     public function getData(int $currentUserId = 257)
@@ -62,18 +69,18 @@ class DataModel extends Model
 
         $fileData = "wb/usrs/257-3060-qs";
 
-        //$content = Storage::path($pathFull);
-        //$content = Storage::disk('data')->get($fileData);
         $content = $this->readTextFile($fileData);
 
-        $contentData = [];
+        /*$contentData = [];
 
         foreach ($content as $item) {
             $contentData[] = trim(str_replace('\n', '', $item));
-        }
+        }*/
 
         //return response()->json($content, 200, $this->headers);
-        return json_encode($contentData, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        //return json_encode($content, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        return $content;
+
     }
 
     /*
