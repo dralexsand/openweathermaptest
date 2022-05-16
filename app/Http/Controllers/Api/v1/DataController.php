@@ -4,10 +4,13 @@ namespace App\Http\Controllers\Api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Models\DataModel;
+use App\Services\DataService;
 use Illuminate\Http\Request;
 
 class DataController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,14 +18,15 @@ class DataController extends Controller
      */
     public function index()
     {
-        $model = new DataModel();
-        $data = $model->getData();
+        $service = new DataService(3060, 257);
+        $data = $service->getData();
         return response($data);
     }
 
-    public function filesList(){
-        $model = new DataModel();
-        $data = $model->getDataFilesList(3060);
+    public function filesList()
+    {
+        $service = new DataService(3060, 257);
+        $data = $service->getDataFilesList(3060);
         return response($data);
     }
 
