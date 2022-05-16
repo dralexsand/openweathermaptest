@@ -1,6 +1,20 @@
-import { createStore } from 'vuex'
+import {createStore} from 'vuex'
 
-export default createStore({
+import projects from "./modules/projects";
+import users from "./modules/users";
+import stats from "./modules/stats";
+
+const store = createStore({
+    modules: {
+        projects,
+        users,
+        stats
+    }
+})
+
+export default store
+
+/*export default createStore({
   state: {
   },
   getters: {
@@ -11,4 +25,4 @@ export default createStore({
   },
   modules: {
   }
-})
+})*/

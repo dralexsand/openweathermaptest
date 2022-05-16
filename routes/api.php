@@ -10,9 +10,13 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 });*/
 
-Route::get('users', [UserController::class, 'index'])->name('api.users');
+/*Route::get('users', [UserController::class, 'index'])->name('api.users');
 
-Route::get('data', [DataController::class, 'index'])->name('api.data');
+Route::get('users/{userId}', [UserController::class, 'show'])->name('api.user.data');
+
+Route::get('data/{pid}', [DataController::class, 'show'])
+    ->name('api.data.show')
+    ->where('pid', '[0-9]+');
 
 Route::get('data/files', [DataController::class, 'filesList'])->name('api.files');
 
@@ -22,5 +26,5 @@ Route::get('project/{projectId}', [ProjectController::class, 'show'])->name('api
 
 Route::fallback(function () {
     abort(404, 'API resource not found');
-});
+});*/
 

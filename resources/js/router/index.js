@@ -5,7 +5,7 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: HomeView
+        component: () => import(/* webpackChunkName: "about" */ '../views/pages/Home')
     },
     {
         path: '/about',
@@ -19,7 +19,17 @@ const routes = [
         path: '/demo',
         name: 'demo',
         component: () => import('../views/pages/Demo')
-    }
+    },
+    {
+        path: '/homeview',
+        name: 'homeview',
+        component: HomeView
+    },
+    {
+        path: '/users',
+        name: 'users',
+        component: () => import('../views/pages/Users')
+    },
 ]
 
 const router = createRouter({

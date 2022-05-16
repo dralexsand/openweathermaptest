@@ -8,9 +8,9 @@
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-    <title>Marpla</title>
+    <title>OpenWeather | Test</title>
 </head>
-<body class="container">
+<body class="container-fluid">
 <div id="app">
     <router-view></router-view>
 </div>

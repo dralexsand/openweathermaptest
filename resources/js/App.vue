@@ -5,6 +5,10 @@
     <router-link to="/about">About</router-link>
     |
     <router-link to="/demo">Demo</router-link>
+    |
+    <router-link to="/homeview">HomeView</router-link>
+    |
+    <router-link to="/users">Users</router-link>
   </nav>
   <router-view/>
 </template>
@@ -30,3 +34,7 @@ nav {
   }
 }
 </style>
+<script>export default {
+  components: {}
+}
+</script>

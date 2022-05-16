@@ -4,6 +4,7 @@ import SProgressbar from "./UI/SProgressbar";
 import SCard from "./UI/SCard";
 import HelloWorld from "./HelloWorld";
 import LogoVue from "./icons/LogoVue";
+import TgIcon from "./icons/TgIcon";
 import ExampleComponent from "./ExampleComponent";
 //import TreeView from "./TreeView";
 
@@ -14,6 +15,7 @@ export default [
     SProgressbar,
     SCard,
     HelloWorld,
-    LogoVue
+    LogoVue,
+    TgIcon,
     //TreeView
 ]
