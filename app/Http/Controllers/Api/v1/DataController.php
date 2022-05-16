@@ -20,6 +20,12 @@ class DataController extends Controller
         return response($data);
     }
 
+    public function filesList(){
+        $model = new DataModel();
+        $data = $model->getDataFilesList(3060);
+        return response($data);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
