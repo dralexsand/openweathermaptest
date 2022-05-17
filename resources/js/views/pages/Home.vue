@@ -198,7 +198,7 @@ export default {
 }
 
 .widget_image {
-  width: 40rem;
+  width: 20rem;
   line-height: 5rem;
 }
 
