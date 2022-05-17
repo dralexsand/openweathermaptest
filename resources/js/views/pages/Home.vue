@@ -1,7 +1,6 @@
 <template>
   <div class="s-container">
 
-
     <div class="row">
       <div class="col">
         <div class="mb-3">
@@ -193,13 +192,13 @@ export default {
 }
 
 .central_widget {
-  height: 40vh;
-  line-height: 40vw;
+  height: 10vh;
+  line-height: 5vw;
   text-align: center;
 }
 
 .widget_image {
-  width: 10rem;
+  width: 40rem;
   line-height: 5rem;
 }
 
@@ -226,7 +225,8 @@ export default {
   margin: 8rem auto;
   background-color: #3686ef;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, .7);
-  min-height: 50rem;
+  /*min-height: 50rem;*/
+  min-height: 75rem;
 
   @media only screen and(max-width: 75rem) {
     margin: 0;
