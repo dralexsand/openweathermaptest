@@ -2,14 +2,14 @@ import axios from "axios";
 import config from "../../env";
 
 const actions = {
-    async fetchProjects(ctx, user_id) {
-        let url = config.baseApiUrl + 'projects/' + user_id
+    async fetchWeather(ctx, city) {
+        let url = config.baseApiUrl + city
         await axios.get(url)
             .then(function (response) {
                 // handle success
                 console.log(config.baseApiUrl)
                 console.log(response.data);
-                ctx.commit('updateProjects', response.data)
+                ctx.commit('updateWeather', response.data)
             })
             .catch(function (error) {
                 // handle error
@@ -23,18 +23,18 @@ const actions = {
 }
 
 const mutations = {
-    updateProjects(state, payload) {
-        state.projects = payload
+    updateWeather(state, payload) {
+        state.weather = payload
     }
 }
 
 const state = {
-    projects: []
+    weather: []
 }
 
 const getters = {
-    getProjects(state) {
-        return state.projects
+    getWeather(state) {
+        return state.weather
     }
 }
 
